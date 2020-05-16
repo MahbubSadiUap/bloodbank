@@ -1,0 +1,37 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  <form action="." method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <input type="number" name="pin" placeholder="Enter your pin code" class="form-control">
+    </div>
+
+    <input type="submit" class="btn btn-sm btn-secondary" value="search">
+  </form>
+
+  <br>
+
+  {% if obj %}
+  <table class="table table-sm table-bordered">
+    <tr class="table-secondary">
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Blood Group</th>
+      <th>Donation Date</th>
+      <th>Location</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>{{obj.name}}</td>
+      <td>{{obj.phone}}</td>
+      <td>{{obj.email}}</td>
+      <td>{{obj.blood_group}}</td>
+      <td>{{obj.date_of_donation}}</td>
+      <td>{{obj.donation_location}} | {{obj.district}}</td>
+      <td><a href="{% url 'editrequest' obj.pin_code %}">EDIT</a> | <a href="{% url 'deleterequest' obj.pin_code %}">DELETE</a></td>
+    </tr>
+  </table>
+  {% endif %}
+{% endblock %}

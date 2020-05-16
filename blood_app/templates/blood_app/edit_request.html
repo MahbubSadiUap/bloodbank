@@ -1,0 +1,11 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  <form action="." method="POST">
+    {% csrf_token %}
+    <table>
+      {{form.as_table}}
+    </table>
+    <input type="submit" class="btn btn-sm btn-secondary" value="Update">
+  </form>
+{% endblock %}

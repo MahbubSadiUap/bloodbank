@@ -1,0 +1,13 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  <h2>Create Request</h2>
+  <p>Anyone can request for blood.Don't need for register or login.</p>
+  <form action="." method="POST">
+    {% csrf_token %}
+    <table>
+      {{form.as_table}}
+    </table>
+    <input type="submit" class="btn btn-outline-primary btn-sm" value="Create">
+  </form>
+{% endblock %}

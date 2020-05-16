@@ -1,0 +1,12 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  <h2>Donor Login</h2>
+  <form action="." method="POST">
+    {% csrf_token %}
+    <table>
+      {{form.as_table}}
+    </table>
+    <input type="submit" class="btn btn-outline-primary btn-sm" value="LOGIN">
+  </form>
+{% endblock %}

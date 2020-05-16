@@ -1,0 +1,23 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  <div class="row">
+    <table>
+      <tr>
+        <td><img src="{{ obj.userextend.image.url }}" width="200" height="300" class="img-fluid"></td>
+      </tr>
+      <tr>
+        <td>
+          <br><h3>Name: {{obj.get_full_name}}</h3>
+          <h3>Blood Group: {{obj.userextend.blood_group}}</h3>
+          <h3>Gender: {{obj.userextend.gender }}</h3>
+          <h3>Phone: {{obj.userextend.phone }}</h3>
+          <h3>Email: {{obj.email}}</h3>
+          <h3>Address: {{obj.userextend.address}}</h3>
+          <h3>District: {{obj.userextend.district}}</h3>
+          <h3>Date of Birth: {{obj.userextend.date_of_birth}}</h3>
+        </td>
+      </tr>
+    </table>
+  </div>
+{% endblock %}

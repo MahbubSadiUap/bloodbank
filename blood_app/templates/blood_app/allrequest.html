@@ -1,0 +1,29 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  {% if all_req %}
+    <h3 class="text-center">All Request</h3>
+    <table class="table table-sm table-bordered">
+      <tr class="table-secondary">
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Blood Group</th>
+        <th>Donation Date</th>
+        <th>Location</th>
+      </tr>
+      {% for i in all_req %}
+        <tr>
+          <td>{{i.name}}</td>
+          <td>{{i.phone}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.blood_group}}</td>
+          <td>{{i.date_of_donation}}</td>
+          <td>{{i.donation_location}} | {{i.district}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <h2>No Request Available</h2>
+  {% endif %}
+{% endblock %}

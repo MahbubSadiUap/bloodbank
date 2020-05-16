@@ -1,0 +1,13 @@
+{% extends "blood_app/base.html" %}
+
+{% block content %}
+  <h2>Update Profile</h2>
+  <form action="." method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+      {{form1.as_table}}
+      {{form2.as_table}}
+    </table>
+    <input type="submit" class="btn btn-outline-primary btn-sm" value="UPDATE">
+  </form>
+{% endblock %}
